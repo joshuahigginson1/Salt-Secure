@@ -23,5 +23,7 @@ mkdir -p /srv/{salt,pillar}
 # Configure auto-accept. TODO: Auto-Accept based on grains.
 sed -i 's/#auto_accept: False/auto_accept: True/g' /etc/salt/master
 
+# Run commands based on os using the following: sudo salt -G 'os:Ubuntu' test.version
+
 service salt-master restart
 sudo reboot # Reboot machine to change DNS.
