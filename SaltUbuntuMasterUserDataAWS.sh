@@ -3,10 +3,12 @@
 
 # If behind corperate proxy...
 
-if <expression for checking>;
-then
-<set of commands to be executed>
-fi
+#if <expression for checking>;
+#then
+#<set of commands to be executed>
+#fi
+
+hostnamectl set-hostname webserver
 
 # Add SaltStack Repos to APT Package Manager.
 curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/py3/ubuntu/20.04/amd64/latest/salt-archive-keyring.gpg
