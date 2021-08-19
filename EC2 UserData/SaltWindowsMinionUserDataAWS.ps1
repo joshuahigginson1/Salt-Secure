@@ -13,7 +13,7 @@ $ProxyOverride = "localhost;127.0.0.1;10.*;.eu-west-2.amazonaws.com;169.254.169.
 
 # Automatic Variables
 $SaltSource = "https://repo.saltstack.com/windows/$saltversion"
-$SaltDestination = "c:\Salt\$saltversion"
+$SaltDownloadDestination = "c:\temp\$saltversion"
 $SaltMasterPrivateIP = "127.0.0.1"  # TODO: Set with Terraform Template.
 
 ### Code ###
@@ -35,7 +35,7 @@ Install-Package Python3 -Force
 # Install Salt Minion
 New-Item -Path c:\temp -ItemType directory
 Set-Location C:\temp
-wget $SaltSource -OutFile c:\temp\$saltversion
-iex "$SaltDestination /S /master=$SaltMasterPrivateIP /minion-name=$env:computername"
+wget $SaltSource -OutFile $SaltDownloadDestination
+iex "$SaltDownloadDestination /S /master=$SaltMasterPrivateIP /minion-name=$env:computername"
 
 </powershell>
