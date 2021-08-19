@@ -18,3 +18,12 @@ echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] ht
 # Install Salt-Master.
 apt update && apt upgrade -y
 apt install salt-master -y
+
+# Configure SRV.
+mkdir -p /srv/{salt,pillar}
+
+# Configure auto-accept. TODO: Auto-Accept based on grains.
+sed -i 's/#auto_accept: False/auto_accept: True/g' /etc/salt/master
+
+service salt-master restart
+sudo reboot # Reboot machine to change DNS.
