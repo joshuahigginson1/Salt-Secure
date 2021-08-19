@@ -9,8 +9,6 @@
 #<set of commands to be executed>
 #fi
 
-hostnamectl set-hostname webserver
-
 # Add SaltStack Repos to APT Package Manager.
 curl -fsSL -o /usr/share/keyrings/salt-archive-keyring.gpg https://repo.saltproject.io/py3/ubuntu/20.04/amd64/latest/salt-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/salt-archive-keyring.gpg arch=amd64] https://repo.saltproject.io/py3/ubuntu/20.04/amd64/latest focal main" | sudo tee /etc/apt/sources.list.d/salt.list
