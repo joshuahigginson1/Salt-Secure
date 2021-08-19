@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script is used for configuring an x86 Ubuntu machine as a salt master through user data.
 # Requires the urls: repo.saltstack.com and repo.saltproject.io to be allowed on a URL Allowlist.
 
