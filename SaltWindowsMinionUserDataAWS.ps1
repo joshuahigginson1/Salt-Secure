@@ -18,7 +18,7 @@ $SaltDestination = "c:\Salt\$saltversion"
 
 ### Code ###
 
-if ($behindproxy = "True") {
+if ($BehindProxy = "True") {
     Set-ItemProperty "HKCU:\Software\Windows\CurrentVersion\Internet Settings" -name AutoDetect -value 1
     Set-ItemProperty "HKCU:\Software\Windows\CurrentVersion\Internet Settings" -name ProxyEnable -value 1
     Set-ItemProperty "HKCU:\Software\Windows\CurrentVersion\Internet Settings" -name ProxyServer -value $ProxyAddressAndPort
